@@ -1,8 +1,10 @@
-from pprint import pprint
-import requests
-
 SHEETY_PRICES_ENDPOINT = "https://api.sheety.co/cafbb76b207d123/flightDeals/prices"
+SHEETY_ENDPOINT = "https://api.sheety.co/cafbb767c733f083a83e1e17b207d123/flightDeals/users"
+HEADER = {"Authorization": "Bearer hkshddnw35wbsjw6",
+          'Content-Type': 'application/json'
+          }
 
+import requests
 
 
 class DataManager:
@@ -11,8 +13,7 @@ class DataManager:
         self.destination_data = {}
 
     def get_destination_data(self):
-        headers ={"Authorization": "Bearer hkshddnw35wbsjw6"}
-        response = requests.get(url=SHEETY_PRICES_ENDPOINT,headers=headers)
+        response = requests.get(url=SHEETY_PRICES_ENDPOINT)
         data = response.json()
         self.destination_data = data["prices"]
         return self.destination_data
@@ -29,3 +30,7 @@ class DataManager:
                 json=new_data
             )
             print(response.text)
+
+    def get_customer_emails(self):
+        r = requests.get(url=SHEETY_ENDPOINT, headers=HEADER)
+        return r.json()['users']
