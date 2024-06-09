@@ -3,15 +3,15 @@ Cheap Flight Finder is a web-based application that allows users to search for t
 
 # Getting Started
 To use the Cheap Flight Finder application, you will need to have a Google Sheets account and a Twilio account. Follow the steps below to set up the project:
-Clone the repository to your local machine.
-Install the required dependencies by running pip install -r requirements.txt.
-Create a Google Sheet to keep track of the locations you want to visit and their lowest prices. The sheet should have the following columns:
+- Clone the repository to your local machine.
+- Install the required dependencies by running pip install -r requirements.txt.
+- Create a Google Sheet to keep track of the locations you want to visit and their lowest prices. The sheet should have the following columns:
 
        * Location: The name of the location you want to visit.
        * Price: The lowest price you are willing to pay for a round-trip flight to that location.
        
-Create a Twilio account and set up a phone number to receive SMS notifications.
-Create a .env file with the following environment variables:
+- Create a Twilio account and set up a phone number to receive SMS notifications.
+- Create a .env file with the following environment variables:
 
        * SHEETY_ENDPOINT: The endpoint URL for your Google Sheet API.
        * KIWI_API_KEY: Your Tequila Kiwi API key.
